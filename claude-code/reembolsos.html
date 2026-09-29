@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Política de reembolsos — im▪kintila</title>
+<meta name="description" content="Política de reembolsos">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0E0D0C">
+<meta property="og:type" content="website"><meta property="og:title" content="Política de reembolsos — im▪kintila"><meta property="og:description" content="Política de reembolsos"><meta property="og:image" content="https://imkintila.com/claude-code/assets/poster.jpg"><meta property="og:locale" content="es_LA">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0E0D0C;--panel:#1A1816;--line:#2B2723;--cream:#F6F1E9;--paper:#FFFFFF;--ink:#1A1714;--mute:#6B625A;--orange:#D97757;--deep:#C2410C;--soft:#F0D9CB;--r:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:500 17px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:var(--deep)}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:700}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.04em;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(30px,6vw,52px)}
+p{margin:0 0 14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--orange);color:#140b06;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.01em;padding:18px 30px;border-radius:999px;min-height:58px;box-shadow:0 14px 40px rgba(217,119,87,.35);transition:transform .15s,background .2s}
+.btn:hover{background:#e78968}.btn:active{transform:scale(.97)}
+.btn:focus-visible,summary:focus-visible,.play:focus-visible{outline:3px solid #ffd1bd;outline-offset:3px}
+.btn.dark{background:var(--ink);color:var(--cream);box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.btn.block{display:flex;width:100%}
+/* barra superior */
+.top{background:var(--orange);color:#140b06;text-align:center;font-weight:800;font-size:14.5px;padding:10px 16px;letter-spacing:-.01em}
+.top s{opacity:.65}
+/* portada */
+.hero{background:var(--black);color:#fff;padding:36px 0 56px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;left:-20%;top:-10%;width:90%;height:70%;background:radial-gradient(circle,rgba(217,119,87,.22),transparent 65%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;gap:30px}
+.eyebrow{color:var(--orange)}
+.hero h1{font-size:clamp(36px,8.4vw,66px);color:#fff}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .sub{color:#cfc4b8;font-size:clamp(18px,3.4vw,21px);max-width:34em}
+.ticks{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;color:#cfc4b8;font-size:15px;font-weight:600}
+.ticks li:before{content:"✓";color:var(--orange);font-weight:800;margin-right:8px}
+.player{position:relative;width:min(100%,400px);margin-inline:auto;border-radius:26px;overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px #ffffff14}
+.player video{width:100%;height:100%;object-fit:cover;background:#000}
+.play{display:none;position:absolute;inset:0;width:100%;border:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.55)),url(/claude-code/assets/poster.jpg) center/cover;cursor:pointer;color:#fff;place-items:end center;padding:0 20px 26px;font:inherit}
+.js .play{display:grid}
+.play .circle{position:absolute;left:50%;top:66%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:var(--orange);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(217,119,87,.28);animation:pulse 2.2s infinite}
+.play .circle:after{content:"";margin-left:7px;border-left:28px solid #140b06;border-top:18px solid transparent;border-bottom:18px solid transparent}
+.play b{font-size:20px;letter-spacing:-.01em;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.play span{display:block;font-size:14px;font-weight:600;opacity:.85;margin-top:2px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,119,87,.5)}70%{box-shadow:0 0 0 26px rgba(217,119,87,0)}100%{box-shadow:0 0 0 0 rgba(217,119,87,0)}}
+.cap{color:#8d8378;font-size:13px;text-align:center;margin:12px 0 0}
+.hero .buy{display:grid;gap:14px;justify-items:start}
+.micro{color:#a99c8f;font-size:14.5px;font-weight:600}
+.micro b{color:#fff}
+@media(min-width:900px){
+ .hero{padding:64px 0 84px}
+ .hero .wrap{grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+ .player{margin:0}
+}
+@media(max-width:899px){
+ .hero .buy{justify-items:stretch}.hero .buy .btn{width:100%}
+ .hero .col-video{order:2}.hero .col-text{order:1}
+}
+/* secciones */
+section{padding:72px 0}
+.lead{font-size:clamp(18px,3.2vw,22px);color:#3a332d;max-width:38em}
+.kick{color:var(--deep);margin-bottom:14px}
+.pain{display:grid;gap:14px;margin-top:34px}
+.pain div{background:var(--paper);border-radius:var(--r);padding:24px 26px;box-shadow:0 10px 30px rgba(80,40,20,.08)}
+.pain b{display:block;font-size:22px;letter-spacing:-.03em;margin-bottom:6px}
+.pain span{color:var(--mute)}
+@media(min-width:800px){.pain{grid-template-columns:repeat(3,1fr)}}
+.idea{background:var(--black);color:#fff}
+.idea h2 em{font-style:normal;color:var(--orange)}
+.idea .lead{color:#cfc4b8}
+.split{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;gap:64px}}
+.win{background:var(--panel);border:1px solid var(--line);border-radius:26px;box-shadow:0 40px 100px rgba(0,0,0,.5);overflow:hidden}
+.win .bar{height:52px;display:flex;align-items:center;gap:9px;padding:0 20px;border-bottom:1px solid var(--line);font:700 14px "JetBrains Mono",monospace;color:#cbbfb2}
+.win .bar i{width:13px;height:13px;border-radius:50%;display:block}
+.win ul{list-style:none;margin:0;padding:8px 0 12px}
+.win li{padding:14px 24px;border-left:5px solid transparent}
+.win li code{display:block;font:700 15px "JetBrains Mono",monospace;color:#a99c8f}
+.win li b{font-size:24px;letter-spacing:-.03em;color:#fff}
+.win li.hot{background:rgba(217,119,87,.16);border-left-color:var(--orange)}
+.win li.hot code{color:var(--orange)}
+.mods{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:12px}
+.mods li{display:flex;gap:18px;background:var(--paper);border-radius:var(--r);padding:20px 22px;box-shadow:0 8px 24px rgba(80,40,20,.07)}
+.mods .n{flex:0 0 46px;height:46px;border-radius:14px;background:var(--orange);color:#140b06;display:grid;place-items:center;font:700 16px "JetBrains Mono",monospace}
+.mods b{display:block;font-size:19px;letter-spacing:-.02em;line-height:1.25}
+.mods span:not(.n){display:block;color:var(--mute);font-size:15.5px;margin-top:3px}
+@media(min-width:800px){.mods{grid-template-columns:1fr 1fr}}
+.inc{display:grid;gap:12px;margin-top:26px}
+.inc div{border:2px dashed #d3c3b0;border-radius:var(--r);padding:20px 22px}
+.inc b{display:block;margin-bottom:4px}
+@media(min-width:800px){.inc{grid-template-columns:repeat(3,1fr)}}
+.uses{display:grid;gap:14px;margin-top:32px}
+.uses div{background:var(--panel);color:#fff;border-radius:var(--r);padding:26px}
+.uses .mono{color:var(--orange)}
+.uses b{display:block;font-size:26px;letter-spacing:-.03em;margin-top:8px}
+@media(min-width:800px){.uses{grid-template-columns:repeat(3,1fr)}}
+.need{background:var(--paper)}
+.need ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
+.need li{display:flex;gap:14px;align-items:flex-start;padding:16px 20px;border-radius:16px;background:var(--cream)}
+.need li:before{content:"";flex:0 0 12px;height:12px;border-radius:50%;background:var(--orange);margin-top:8px}
+.need li b{font-weight:800}
+.fit{display:grid;gap:16px;margin-top:30px}
+.fit>div{border-radius:var(--r);padding:26px 28px}
+.fit .yes{background:var(--ink);color:var(--cream)}
+.fit .no{border:2px solid #cdbdaa}
+.fit h3{font-size:24px;margin-bottom:14px}
+.fit ul{margin:0;padding-left:20px}.fit li{margin:8px 0}
+@media(min-width:800px){.fit{grid-template-columns:1fr 1fr}}
+/* oferta */
+.offer{background:var(--black);color:#fff}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:34px 28px;max-width:640px;margin:34px auto 0;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.price{display:flex;align-items:baseline;justify-content:center;gap:18px;margin:8px 0 6px}
+.price s{font-size:34px;color:#8d8378;font-weight:800;letter-spacing:-.04em}
+.price b{font-size:clamp(84px,20vw,128px);letter-spacing:-.07em;line-height:.9;font-weight:800}
+.tag{display:inline-block;background:rgba(217,119,87,.18);color:var(--orange);padding:8px 16px;border-radius:999px;margin-bottom:6px}
+.card ul{list-style:none;text-align:left;padding:0;margin:24px 0;display:grid;gap:11px;color:#e5dccf}
+.card li:before{content:"✓";color:var(--orange);font-weight:800;margin-right:12px}
+.shield{display:flex;align-items:center;gap:16px;text-align:left;margin-top:22px;color:#cfc4b8;font-size:15px}
+.shield i{flex:0 0 52px;height:52px;border-radius:50%;background:var(--orange);display:grid;place-items:center;color:#140b06;font:800 26px Inter,sans-serif;font-style:normal}
+/* faq */
+details{background:var(--paper);border-radius:18px;margin:10px 0;box-shadow:0 6px 20px rgba(80,40,20,.06)}
+summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:700;font-size:18px;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:28px;line-height:1;color:var(--deep);font-weight:600}
+details[open] summary:after{content:"–"}
+details p{padding:0 24px 22px;color:#3a332d;margin:0}
+.faq{max-width:800px;margin-inline:auto}
+.final{background:var(--orange);color:#140b06;text-align:center}
+.final h2{color:#140b06}
+.final .btn{background:#140b06;color:var(--cream);box-shadow:0 20px 50px rgba(80,25,5,.35);margin-top:26px}
+.final p{font-weight:700;margin-top:16px}
+footer{background:var(--black);color:#a99c8f;padding:44px 0 120px;font-size:14px}
+footer a{color:#cfc4b8}
+footer .links{display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 22px}
+footer small{display:block;max-width:60em;line-height:1.6}
+/* barra fija móvil */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(14,13,12,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;gap:14px;align-items:center;justify-content:center;transform:translateY(110%);transition:transform .25s}
+.sticky.on{transform:none}
+.sticky .p{color:#fff;font-weight:800;line-height:1.15}.sticky .p small{display:block;color:#a99c8f;font-weight:600;font-size:12.5px}
+.sticky .btn{padding:14px 22px;min-height:50px;font-size:17px;flex:1;max-width:320px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.play .circle,.sticky{animation:none;transition:none}}
+</style></head><body><header class="hero" style="padding:28px 0"><div class="wrap"><a href="/" style="color:#fff;text-decoration:none" class="mono">← im▪kintila</a></div></header><section><div class="wrap" style="max-width:760px"><h1 style="font-size:clamp(32px,6vw,48px);margin-bottom:26px">Política de reembolsos</h1><p>Tienes <b>7 días de garantía</b> desde la fecha de tu compra.</p>
+<h3 style="font-size:22px;margin:26px 0 10px">Cómo pedirlo</h3><p>Responde al correo del recibo de tu compra (el que te envía Stripe) indicando que quieres el reembolso. No hace falta explicar el motivo. [Confirmar condiciones finales.]</p>
+<h3 style="font-size:22px;margin:26px 0 10px">Cómo se devuelve</h3><p>El reembolso se hace al mismo método de pago que usaste. El tiempo en que lo ves depende de tu banco.</p>
+<h3 style="font-size:22px;margin:26px 0 10px">Qué pasa con tu acceso</h3><p>Al reembolsar, tu enlace personal deja de funcionar.</p><p class="micro" style="margin-top:34px;color:var(--mute)">Borrador de trabajo: revísalo antes del lanzamiento y ajústalo a tu país y datos legales.</p></div></section><footer><div class="wrap">
+<a class="mono" href="/" style="color:#fff;text-decoration:none">im▪kintila</a>
+<div class="links"><a href="/claude-code/terminos.html">Términos</a><a href="/claude-code/privacidad.html">Privacidad</a><a href="/claude-code/reembolsos.html">Reembolsos</a></div>
+<small>Claude es una marca de Anthropic. Este producto es una guía independiente: no está afiliado, patrocinado ni respaldado por Anthropic. La guía no incluye ninguna suscripción a Claude. No prometemos resultados económicos: lo que consigas depende de que sigas los pasos y de cómo uses lo que armes.</small>
+</div></footer></body></html>
