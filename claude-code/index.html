@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Claude Code de cero a cien — Tu ecosistema en Claude Code, paso a paso</title>
+<meta name="description" content="Guía paso a paso para armar tu ecosistema en Claude Code: tu negocio escrito para Claude, con prompts para copiar y pegar. Sin Terminal, sin programar. Garantía de 7 días.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0E0D0C">
+<meta property="og:type" content="website"><meta property="og:title" content="Claude Code de cero a cien — Tu ecosistema en Claude Code, paso a paso"><meta property="og:description" content="Guía paso a paso para armar tu ecosistema en Claude Code: tu negocio escrito para Claude, con prompts para copiar y pegar. Sin Terminal, sin programar. Garantía de 7 días."><meta property="og:image" content="https://imkintila.com/claude-code/assets/poster.jpg"><meta property="og:locale" content="es_LA">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0E0D0C;--panel:#1A1816;--line:#2B2723;--cream:#F6F1E9;--paper:#FFFFFF;--ink:#1A1714;--mute:#6B625A;--orange:#D97757;--deep:#C2410C;--soft:#F0D9CB;--r:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:500 17px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:var(--deep)}
+.wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace;text-transform:uppercase;letter-spacing:.14em;font-size:12.5px;font-weight:700}
+h1,h2,h3{margin:0;font-weight:800;letter-spacing:-.04em;line-height:1.05;text-wrap:balance}
+h2{font-size:clamp(30px,6vw,52px)}
+p{margin:0 0 14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--orange);color:#140b06;text-decoration:none;font-weight:800;font-size:19px;letter-spacing:-.01em;padding:18px 30px;border-radius:999px;min-height:58px;box-shadow:0 14px 40px rgba(217,119,87,.35);transition:transform .15s,background .2s}
+.btn:hover{background:#e78968}.btn:active{transform:scale(.97)}
+.btn:focus-visible,summary:focus-visible,.play:focus-visible{outline:3px solid #ffd1bd;outline-offset:3px}
+.btn.dark{background:var(--ink);color:var(--cream);box-shadow:0 14px 40px rgba(0,0,0,.25)}
+.btn.block{display:flex;width:100%}
+/* barra superior */
+.top{background:var(--orange);color:#140b06;text-align:center;font-weight:800;font-size:14.5px;padding:10px 16px;letter-spacing:-.01em}
+.top s{opacity:.65}
+/* portada */
+.hero{background:var(--black);color:#fff;padding:36px 0 56px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;left:-20%;top:-10%;width:90%;height:70%;background:radial-gradient(circle,rgba(217,119,87,.22),transparent 65%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;gap:30px}
+.eyebrow{color:var(--orange)}
+.hero h1{font-size:clamp(36px,8.4vw,66px);color:#fff}
+.hero h1 em{font-style:normal;color:var(--orange)}
+.hero .sub{color:#cfc4b8;font-size:clamp(18px,3.4vw,21px);max-width:34em}
+.ticks{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;color:#cfc4b8;font-size:15px;font-weight:600}
+.ticks li:before{content:"✓";color:var(--orange);font-weight:800;margin-right:8px}
+.player{position:relative;width:min(100%,400px);margin-inline:auto;border-radius:26px;overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px #ffffff14}
+.player video{width:100%;height:100%;object-fit:cover;background:#000}
+.play{display:none;position:absolute;inset:0;width:100%;border:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.55)),url(/claude-code/assets/poster.jpg) center/cover;cursor:pointer;color:#fff;place-items:end center;padding:0 20px 26px;font:inherit}
+.js .play{display:grid}
+.play .circle{position:absolute;left:50%;top:66%;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;background:var(--orange);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(217,119,87,.28);animation:pulse 2.2s infinite}
+.play .circle:after{content:"";margin-left:7px;border-left:28px solid #140b06;border-top:18px solid transparent;border-bottom:18px solid transparent}
+.play b{font-size:20px;letter-spacing:-.01em;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+.play span{display:block;font-size:14px;font-weight:600;opacity:.85;margin-top:2px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,119,87,.5)}70%{box-shadow:0 0 0 26px rgba(217,119,87,0)}100%{box-shadow:0 0 0 0 rgba(217,119,87,0)}}
+.cap{color:#8d8378;font-size:13px;text-align:center;margin:12px 0 0}
+.hero .buy{display:grid;gap:14px;justify-items:start}
+.micro{color:#a99c8f;font-size:14.5px;font-weight:600}
+.micro b{color:#fff}
+@media(min-width:900px){
+ .hero{padding:64px 0 84px}
+ .hero .wrap{grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+ .player{margin:0}
+}
+@media(max-width:899px){
+ .hero .buy{justify-items:stretch}.hero .buy .btn{width:100%}
+ .hero .col-video{order:2}.hero .col-text{order:1}
+}
+/* secciones */
+section{padding:72px 0}
+.lead{font-size:clamp(18px,3.2vw,22px);color:#3a332d;max-width:38em}
+.kick{color:var(--deep);margin-bottom:14px}
+.pain{display:grid;gap:14px;margin-top:34px}
+.pain div{background:var(--paper);border-radius:var(--r);padding:24px 26px;box-shadow:0 10px 30px rgba(80,40,20,.08)}
+.pain b{display:block;font-size:22px;letter-spacing:-.03em;margin-bottom:6px}
+.pain span{color:var(--mute)}
+@media(min-width:800px){.pain{grid-template-columns:repeat(3,1fr)}}
+.idea{background:var(--black);color:#fff}
+.idea h2 em{font-style:normal;color:var(--orange)}
+.idea .lead{color:#cfc4b8}
+.split{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.split{grid-template-columns:1fr 1fr;gap:64px}}
+.win{background:var(--panel);border:1px solid var(--line);border-radius:26px;box-shadow:0 40px 100px rgba(0,0,0,.5);overflow:hidden}
+.win .bar{height:52px;display:flex;align-items:center;gap:9px;padding:0 20px;border-bottom:1px solid var(--line);font:700 14px "JetBrains Mono",monospace;color:#cbbfb2}
+.win .bar i{width:13px;height:13px;border-radius:50%;display:block}
+.win ul{list-style:none;margin:0;padding:8px 0 12px}
+.win li{padding:14px 24px;border-left:5px solid transparent}
+.win li code{display:block;font:700 15px "JetBrains Mono",monospace;color:#a99c8f}
+.win li b{font-size:24px;letter-spacing:-.03em;color:#fff}
+.win li.hot{background:rgba(217,119,87,.16);border-left-color:var(--orange)}
+.win li.hot code{color:var(--orange)}
+.mods{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:12px}
+.mods li{display:flex;gap:18px;background:var(--paper);border-radius:var(--r);padding:20px 22px;box-shadow:0 8px 24px rgba(80,40,20,.07)}
+.mods .n{flex:0 0 46px;height:46px;border-radius:14px;background:var(--orange);color:#140b06;display:grid;place-items:center;font:700 16px "JetBrains Mono",monospace}
+.mods b{display:block;font-size:19px;letter-spacing:-.02em;line-height:1.25}
+.mods span:not(.n){display:block;color:var(--mute);font-size:15.5px;margin-top:3px}
+@media(min-width:800px){.mods{grid-template-columns:1fr 1fr}}
+.inc{display:grid;gap:12px;margin-top:26px}
+.inc div{border:2px dashed #d3c3b0;border-radius:var(--r);padding:20px 22px}
+.inc b{display:block;margin-bottom:4px}
+@media(min-width:800px){.inc{grid-template-columns:repeat(3,1fr)}}
+.uses{display:grid;gap:14px;margin-top:32px}
+.uses div{background:var(--panel);color:#fff;border-radius:var(--r);padding:26px}
+.uses .mono{color:var(--orange)}
+.uses b{display:block;font-size:26px;letter-spacing:-.03em;margin-top:8px}
+@media(min-width:800px){.uses{grid-template-columns:repeat(3,1fr)}}
+.need{background:var(--paper)}
+.need ul{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
+.need li{display:flex;gap:14px;align-items:flex-start;padding:16px 20px;border-radius:16px;background:var(--cream)}
+.need li:before{content:"";flex:0 0 12px;height:12px;border-radius:50%;background:var(--orange);margin-top:8px}
+.need li b{font-weight:800}
+.fit{display:grid;gap:16px;margin-top:30px}
+.fit>div{border-radius:var(--r);padding:26px 28px}
+.fit .yes{background:var(--ink);color:var(--cream)}
+.fit .no{border:2px solid #cdbdaa}
+.fit h3{font-size:24px;margin-bottom:14px}
+.fit ul{margin:0;padding-left:20px}.fit li{margin:8px 0}
+@media(min-width:800px){.fit{grid-template-columns:1fr 1fr}}
+/* oferta */
+.offer{background:var(--black);color:#fff}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:34px 28px;max-width:640px;margin:34px auto 0;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,.5)}
+.price{display:flex;align-items:baseline;justify-content:center;gap:18px;margin:8px 0 6px}
+.price s{font-size:34px;color:#8d8378;font-weight:800;letter-spacing:-.04em}
+.price b{font-size:clamp(84px,20vw,128px);letter-spacing:-.07em;line-height:.9;font-weight:800}
+.tag{display:inline-block;background:rgba(217,119,87,.18);color:var(--orange);padding:8px 16px;border-radius:999px;margin-bottom:6px}
+.card ul{list-style:none;text-align:left;padding:0;margin:24px 0;display:grid;gap:11px;color:#e5dccf}
+.card li:before{content:"✓";color:var(--orange);font-weight:800;margin-right:12px}
+.shield{display:flex;align-items:center;gap:16px;text-align:left;margin-top:22px;color:#cfc4b8;font-size:15px}
+.shield i{flex:0 0 52px;height:52px;border-radius:50%;background:var(--orange);display:grid;place-items:center;color:#140b06;font:800 26px Inter,sans-serif;font-style:normal}
+/* faq */
+details{background:var(--paper);border-radius:18px;margin:10px 0;box-shadow:0 6px 20px rgba(80,40,20,.06)}
+summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:700;font-size:18px;letter-spacing:-.02em;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-size:28px;line-height:1;color:var(--deep);font-weight:600}
+details[open] summary:after{content:"–"}
+details p{padding:0 24px 22px;color:#3a332d;margin:0}
+.faq{max-width:800px;margin-inline:auto}
+.final{background:var(--orange);color:#140b06;text-align:center}
+.final h2{color:#140b06}
+.final .btn{background:#140b06;color:var(--cream);box-shadow:0 20px 50px rgba(80,25,5,.35);margin-top:26px}
+.final p{font-weight:700;margin-top:16px}
+footer{background:var(--black);color:#a99c8f;padding:44px 0 120px;font-size:14px}
+footer a{color:#cfc4b8}
+footer .links{display:flex;gap:22px;flex-wrap:wrap;margin:14px 0 22px}
+footer small{display:block;max-width:60em;line-height:1.6}
+/* barra fija móvil */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(14,13,12,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom));display:flex;gap:14px;align-items:center;justify-content:center;transform:translateY(110%);transition:transform .25s}
+.sticky.on{transform:none}
+.sticky .p{color:#fff;font-weight:800;line-height:1.15}.sticky .p small{display:block;color:#a99c8f;font-weight:600;font-size:12.5px}
+.sticky .btn{padding:14px 22px;min-height:50px;font-size:17px;flex:1;max-width:320px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.play .circle,.sticky{animation:none;transition:none}}
+</style></head><body>
+<div class="top">Precio de lanzamiento: <b>$27</b> <s>$47</s> · pago único</div>
+<header class="hero"><div class="wrap">
+ <div class="col-text">
+  <div class="mono eyebrow">Guía paso a paso · Sin Terminal · Sin programar</div>
+  <h1 style="margin-top:16px">¿Quieres aprender <em>Claude Code</em> y no sabes por dónde empezar?</h1>
+  <p class="sub" style="margin-top:20px">Esta es la guía para armar tu ecosistema: tu negocio escrito para Claude, con el prompt exacto para copiar y pegar en cada paso, lo que deberías ver y una lista para comprobar que quedó bien.</p>
+  <ul class="ticks"><li>11 módulos</li><li>87 páginas</li><li>42 archivos y plantillas</li></ul>
+  <div class="buy" id="buy-now" data-watch style="margin-top:26px">
+   <a class="btn " href="https://buy.stripe.com/6oU4gy4RGeqrehl4Ss2kw01" data-cta>Quiero la guía por $27<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+   <div class="micro"><b>Pago único</b> · Acceso inmediato · <b>Garantía de 7 días</b></div>
+  </div>
+ </div>
+ <div class="col-video">
+  <div class="player">
+   <video id="vsl" src="/claude-code/assets/vsl-25e059d3.mp4" poster="/claude-code/assets/poster.jpg" preload="metadata" playsinline controls>
+    <track kind="subtitles" srclang="es" label="Español" src="/claude-code/assets/vsl.es.vtt">
+   </video>
+   <button class="play" id="playbtn" type="button" aria-label="Reproducir el video, 2 minutos"><span class="circle"></span><b>Mira cómo funciona<span>2 minutos · con subtítulos</span></b></button>
+  </div>
+  <p class="cap">Video con locución generada por inteligencia artificial.</p>
+ </div>
+</div></header>
+
+<section><div class="wrap">
+ <div class="mono kick">Lo que suele pasar</div>
+ <h2>Mil videos, cada uno distinto. Y ninguno te da el orden.</h2>
+ <div class="pain">
+  <div><b>Contenido de sobra</b><span>Uno dice que instales esto, otro que hagas lo otro. Terminas más confundido que al empezar.</span></div>
+  <div><b>Cada chat empieza de cero</b><span>Otra vez tus precios, otra vez tus clientes, otra vez cómo trabajas. Y las respuestas salen genéricas.</span></div>
+  <div><b>Falta una base</b><span>Aprender a usar Claude no es saber programar. Es tener todo ordenado, y eso es lo que toma tiempo aprender.</span></div>
+ </div>
+</div></section>
+
+<section class="idea"><div class="wrap split">
+ <div>
+  <div class="mono eyebrow" style="margin-bottom:14px">La idea</div>
+  <h2>Una carpeta con tu negocio escrito. <em>Claude la lee antes de ayudarte.</em></h2>
+  <p class="lead" style="margin-top:22px">Eso es un ecosistema en Claude Code: lo que vendes, a quién, tus precios, tus procesos y tus reglas, todo en un mismo lugar. Así Claude deja de empezar de cero en cada chat.</p>
+  <a class="btn " href="https://buy.stripe.com/6oU4gy4RGeqrehl4Ss2kw01" data-cta>Quiero la guía por $27<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+ </div>
+ <div class="win" aria-label="Ejemplo de carpeta mi-ecosistema">
+  <div class="bar"><i style="background:#ff5f57"></i><i style="background:#ffbd2e"></i><i style="background:#28c840"></i><span style="margin-left:8px">mi-ecosistema</span></div>
+  <ul>
+   <li class="hot"><code>CLAUDE.md</code><b>tus reglas para Claude</b></li>
+   <li class="hot"><code>01-negocio/</code><b>tu empresa</b></li>
+   <li class="hot"><code>02-ofertas/</code><b>tus ofertas y precios</b></li>
+   <li class="hot"><code>04-procesos/</code><b>tus procesos</b></li>
+   <li class="hot"><code>06-agentes/</code><b>tus ayudantes especializados</b></li>
+   <li class="hot"><code>08-memoria/</code><b>tu memoria</b></li>
+  </ul>
+ </div>
+</div></section>
+
+<section><div class="wrap">
+ <div class="mono kick">Qué incluye</div>
+ <h2>11 módulos. Cada paso, con su prompt y su comprobación.</h2>
+ <p class="lead" style="margin-top:18px">En cada módulo tienes el prompt exacto para copiar y pegar, lo que deberías ver en pantalla y una lista para comprobar que quedó bien.</p>
+ <ol class="mods"><li><span class="n">00</span><div><b>Instala la app de Claude y abre Code</b><span>La app instalada y una carpeta abierta dentro de Code, sin Terminal.</span></div></li><li><span class="n">01</span><div><b>Crea tu carpeta y que Claude la arme</b><span>Tu carpeta con las secciones de tu negocio, un README y un CLAUDE.md.</span></div></li><li><span class="n">02</span><div><b>Encuentra tus tareas repetitivas</b><span>Una lista ordenada de lo que repites y qué hacer con cada cosa.</span></div></li><li><span class="n">03</span><div><b>Mejora tus instrucciones para Claude</b><span>Un CLAUDE.md corto, claro y con tus reglas.</span></div></li><li><span class="n">04</span><div><b>Documenta tu negocio</b><span>Cinco documentos que explican tu negocio sin que lo repitas.</span></div></li><li><span class="n">05</span><div><b>Conecta tus herramientas</b><span>Tus herramientas conectadas y probadas con una pregunta real.</span></div></li><li><span class="n">06</span><div><b>Escribe tus procesos</b><span>Al menos tres procesos escritos paso a paso.</span></div></li><li><span class="n">07</span><div><b>Guarda tus tareas como prompts</b><span>Una biblioteca de prompts propios, ordenados por área.</span></div></li><li><span class="n">08</span><div><b>Crea ayudantes para cada área</b><span>Al menos tres ayudantes especializados, listos para invocar.</span></div></li><li><span class="n">09</span><div><b>Tu rutina de la semana</b><span>Una rutina de tres días con prompts listos para usar.</span></div></li><li><span class="n">10</span><div><b>Prueba final: ¿esto funciona?</b><span>Un diagnóstico con nota y los tres arreglos más importantes.</span></div></li></ol>
+ <div class="inc">
+  <div><b>Carpeta base lista</b>La estructura <code>mi-ecosistema</code> con plantillas para completar.</div>
+  <div><b>Plantillas y listas</b>Planilla de tareas repetitivas, guía de conectores y listas de control.</div>
+  <div><b>Ejemplo resuelto</b>Un caso completo ya terminado, para ver cómo queda una carpeta armada.</div>
+ </div>
+</div></section>
+
+<section style="background:var(--black);color:#fff"><div class="wrap">
+ <div class="mono eyebrow">¿Y qué haces con eso?</div>
+ <h2 style="margin-top:14px">Le pides. Claude ya conoce tu negocio.</h2>
+ <div class="uses">
+  <div><span class="mono">Lunes</span><b>Tu plan de la semana</b></div>
+  <div><span class="mono">Cuando lo necesitas</span><b>Un mensaje de venta</b></div>
+  <div><span class="mono">Viernes</span><b>El reporte de la semana</b></div>
+ </div>
+ <p class="lead" style="color:#cfc4b8;margin-top:26px">Sin volver a explicarle tu negocio en cada conversación.</p>
+</div></section>
+
+<section class="need"><div class="wrap">
+ <div class="mono kick">Antes de comprar</div>
+ <h2>Lo que necesitas para seguir la guía</h2>
+ <ul>
+  <li><span><b>Una computadora con Mac o Windows.</b> macOS 13 o más nueva, o Windows 10 o más nuevo.</span></li>
+  <li><span><b>Una cuenta de Claude con plan pago</b> (Pro, Max, Team o Enterprise). El plan gratuito no incluye la pestaña Code. La suscripción a Claude no está incluida en el precio de la guía.</span></li>
+  <li><span><b>Conexión a internet</b> y unos 20 minutos para el primer módulo.</span></li>
+  <li><span><b>No necesitas</b> saber programar, abrir la Terminal ni haber usado inteligencia artificial antes.</span></li>
+ </ul>
+</div></section>
+
+<section><div class="wrap">
+ <div class="mono kick">¿Es para ti?</div>
+ <h2>Sé honesto con lo que buscas</h2>
+ <div class="fit">
+  <div class="yes"><h3>Sí es para ti si…</h3><ul><li>Quieres tener tu negocio ordenado y escrito para Claude.</li><li>Prefieres un paso a paso a mil videos sueltos.</li><li>Vas a seguir los pasos en orden.</li></ul></div>
+  <div class="no"><h3>No es para ti si…</h3><ul><li>Buscas algo que funcione solo, sin que hagas nada.</li><li>Esperas resultados sin dedicarle tiempo.</li><li>No vas a contratar un plan pago de Claude.</li></ul></div>
+ </div>
+</div></section>
+
+<section class="offer"><div class="wrap">
+ <div style="text-align:center"><div class="mono eyebrow">Oferta de lanzamiento</div><h2 style="margin-top:14px">Claude Code de cero a cien</h2></div>
+ <div class="card" id="offer" data-watch>
+  <span class="tag mono">Precio de lanzamiento</span>
+  <div class="price"><s>$47</s><b>$27</b></div>
+  <div class="micro">Pago único en dólares · sin suscripción</div>
+  <ul><li>Guía de 11 módulos, paso a paso (87 páginas)</li><li>Prompts listos para copiar con un clic</li><li>Carpeta base, plantillas y listas de control</li><li>Ejemplo completo ya resuelto</li><li>Ayudantes especializados y ejemplo de skill (opcional)</li><li>Acceso inmediato con tu enlace personal</li></ul>
+  <a class="btn block" href="https://buy.stripe.com/6oU4gy4RGeqrehl4Ss2kw01" data-cta>Quiero la guía por $27<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <div class="shield"><i>✓</i><div><b style="color:#fff">Garantía de 7 días.</b><br>Si no es lo que esperabas, respondes al correo de tu recibo y pides el reembolso. <a href="/claude-code/reembolsos.html">Ver condiciones</a>.</div></div>
+ </div>
+</div></section>
+
+<section><div class="wrap faq">
+ <div class="mono kick">Preguntas frecuentes</div>
+ <h2 style="margin-bottom:26px">Lo que suelen preguntar</h2>
+ <details><summary>¿Necesito saber programar o usar la Terminal?</summary><p>No. Todo se hace desde la app de Claude, en la pestaña Code. La guía te dice qué botón tocar en cada paso y qué deberías ver.</p></details><details><summary>¿Qué necesito para empezar?</summary><p>Una computadora con Mac (macOS 13 o más nueva) o Windows 10 o más nuevo, conexión a internet y una cuenta de Claude con plan pago (Pro, Max, Team o Enterprise). El plan gratuito de Claude no incluye la pestaña Code. La suscripción a Claude no está incluida en el precio de la guía.</p></details><details><summary>¿Cómo recibo la guía?</summary><p>Al pagar, llegas a una página con tu enlace personal y entras al instante. Funciona en hasta 3 dispositivos y lleva tu correo como marca de agua. Se puede leer en la computadora y en el celular.</p></details><details><summary>¿Cuánto tiempo toma?</summary><p>El primer módulo toma unos 20 minutos. Después avanzas a tu ritmo: cada módulo termina con una lista para comprobar que quedó bien.</p></details><details><summary>¿Para qué tipo de negocio sirve?</summary><p>Para cualquier negocio o trabajo que tenga ofertas, clientes y tareas que se repiten. Incluye un ejemplo completo ya resuelto para que veas cómo queda una carpeta terminada.</p></details><details><summary>¿Y si no es lo que esperaba?</summary><p>Tienes 7 días de garantía. Responde al correo de tu recibo de compra y pides el reembolso. Está detallado en la <a href="/claude-code/reembolsos.html">política de reembolsos</a>.</p></details><details><summary>¿Los agentes y las skills son automáticos?</summary><p>No. Los "ayudantes" son documentos que le dicen a Claude cómo trabajar en un área. La versión formal de agentes y un ejemplo de skill vienen en una carpeta opcional. Nada trabaja solo: tú le pides y Claude sigue tus reglas.</p></details><details><summary>¿Está en español?</summary><p>Sí, todo el material está en español.</p></details>
+</div></section>
+
+<section class="final"><div class="wrap">
+ <h2>Empieza hoy con el paso uno.</h2>
+ <p style="font-size:20px">Acceso inmediato · Garantía de 7 días · $27 por lanzamiento</p>
+ <a class="btn " href="https://buy.stripe.com/6oU4gy4RGeqrehl4Ss2kw01" data-cta>Quiero la guía por $27<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+</div></section>
+<footer><div class="wrap">
+<a class="mono" href="/" style="color:#fff;text-decoration:none">im▪kintila</a>
+<div class="links"><a href="/claude-code/terminos.html">Términos</a><a href="/claude-code/privacidad.html">Privacidad</a><a href="/claude-code/reembolsos.html">Reembolsos</a></div>
+<small>Claude es una marca de Anthropic. Este producto es una guía independiente: no está afiliado, patrocinado ni respaldado por Anthropic. La guía no incluye ninguna suscripción a Claude. No prometemos resultados económicos: lo que consigas depende de que sigas los pasos y de cómo uses lo que armes.</small>
+</div></footer>
+<div class="sticky" id="sticky" role="region" aria-label="Comprar"><div class="p">$27<small>Lanzamiento · antes $47</small></div><a class="btn " href="https://buy.stripe.com/6oU4gy4RGeqrehl4Ss2kw01" data-cta>Comprar ahora<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+ var v=document.getElementById('vsl'),b=document.getElementById('playbtn');
+ if(v&&b){v.controls=false;
+  b.addEventListener('click',function(){b.style.display='none';v.controls=true;var p=v.play();if(p&&p.catch)p.catch(function(){});});
+  v.addEventListener('ended',function(){document.getElementById('buy-now').scrollIntoView({behavior:'smooth',block:'center'});});
+ }
+ var bar=document.getElementById('sticky'),targets=[].slice.call(document.querySelectorAll('[data-watch]')),seen=new Set();
+ function upd(){bar.classList.toggle('on',seen.size===0&&window.scrollY>300)}
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?seen.add(e.target):seen.delete(e.target)});upd()},{threshold:.2});
+  targets.forEach(function(t){io.observe(t)});addEventListener('scroll',upd,{passive:true});upd();
+ }
+})();
+</script>
+</body></html>
