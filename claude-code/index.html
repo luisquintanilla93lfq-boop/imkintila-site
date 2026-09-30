@@ -142,7 +142,7 @@ footer small{display:block;max-width:60em;line-height:1.6}
 .sticky .p{color:#fff;font-weight:800;line-height:1.15}.sticky .p small{display:block;color:#a99c8f;font-weight:600;font-size:12.5px}
 .sticky .btn{padding:14px 22px;min-height:50px;font-size:17px;flex:1;max-width:320px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.play .circle,.sticky{animation:none;transition:none}}
-</style></head><body>
+</style><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1403876691883659');fbq('track','PageView');fbq('track','ViewContent',{content_name:'Claude Code de cero a cien',content_ids:['ebook-claude-code-emprendedores'],content_type:'product',value:27,currency:'USD'});</script></head><body>
 <div class="top">Precio de lanzamiento: <b>$27</b> <s>$47</s> · pago único</div>
 <header class="hero"><div class="wrap">
  <div class="col-text">
@@ -276,6 +276,12 @@ document.documentElement.classList.add('js');
   b.addEventListener('click',function(){b.style.display='none';v.controls=true;var p=v.play();if(p&&p.catch)p.catch(function(){});});
   v.addEventListener('ended',function(){document.getElementById('buy-now').scrollIntoView({behavior:'smooth',block:'center'});});
  }
+ function fb(){if(window.fbq)window.fbq.apply(null,arguments)}
+ var PROD={value:27,currency:'USD',content_name:'Claude Code de cero a cien',content_ids:['ebook-claude-code-emprendedores'],content_type:'product'};
+ [].slice.call(document.querySelectorAll('[data-cta]')).forEach(function(a){a.addEventListener('click',function(){fb('track','InitiateCheckout',PROD)})});
+ if(v){var played=false,marks={25:0,50:0,75:0,95:0};
+  v.addEventListener('play',function(){if(!played){played=true;fb('trackCustom','VSL_Play')}});
+  v.addEventListener('timeupdate',function(){if(!v.duration)return;var p=v.currentTime/v.duration*100;Object.keys(marks).forEach(function(k){if(!marks[k]&&p>=+k){marks[k]=1;fb('trackCustom','VSL_'+k)}})});}
  var bar=document.getElementById('sticky'),targets=[].slice.call(document.querySelectorAll('[data-watch]')),seen=new Set();
  function upd(){bar.classList.toggle('on',seen.size===0&&window.scrollY>300)}
  if('IntersectionObserver' in window){
