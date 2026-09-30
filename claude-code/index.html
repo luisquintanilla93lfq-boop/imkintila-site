@@ -109,6 +109,19 @@ section{padding:72px 0}
 .fit h3{font-size:24px;margin-bottom:14px}
 .fit ul{margin:0;padding-left:20px}.fit li{margin:8px 0}
 @media(min-width:800px){.fit{grid-template-columns:1fr 1fr}}
+/* quién está detrás */
+.about{background:var(--paper)}
+.about .split{align-items:start}
+.about figure{margin:0;position:relative;max-width:420px}
+.about figure img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:26px;box-shadow:0 30px 70px rgba(80,40,20,.18)}
+@media(max-width:899px){.about figure{max-width:320px}.about figure img{aspect-ratio:1/1;object-position:50% 30%}}
+.about figcaption{position:absolute;left:16px;bottom:16px;background:var(--black);color:#fff;border-radius:16px;padding:12px 16px;font-weight:800;line-height:1.2;letter-spacing:-.01em}
+.about figcaption small{display:block;color:var(--orange);font-weight:700;font-size:13px;margin-top:2px}
+.biz{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px}
+.biz li{display:flex;gap:14px;align-items:flex-start;background:var(--cream);border-radius:16px;padding:14px 18px}
+.biz li:before{content:"";flex:0 0 10px;height:10px;border-radius:3px;background:var(--orange);margin-top:9px}
+.biz b{font-weight:800}
+.biz span{color:var(--mute)}
 /* oferta */
 .offer{background:var(--black);color:#fff}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:30px;padding:34px 28px;max-width:640px;margin:34px auto 0;text-align:center;box-shadow:0 40px 100px rgba(0,0,0,.5)}
@@ -236,6 +249,26 @@ footer small{display:block;max-width:60em;line-height:1.6}
  <div class="fit">
   <div class="yes"><h3>Sí es para ti si…</h3><ul><li>Quieres tener tu negocio ordenado y escrito para Claude.</li><li>Prefieres un paso a paso a mil videos sueltos.</li><li>Vas a seguir los pasos en orden.</li></ul></div>
   <div class="no"><h3>No es para ti si…</h3><ul><li>Buscas algo que funcione solo, sin que hagas nada.</li><li>Esperas resultados sin dedicarle tiempo.</li><li>No vas a contratar un plan pago de Claude.</li></ul></div>
+ </div>
+</div></section>
+
+<section class="about" id="quien"><div class="wrap split">
+ <figure>
+  <img src="/claude-code/assets/luis.jpg" alt="Luis Quintanilla" width="675" height="900" loading="lazy" decoding="async">
+  <figcaption>Luis Quintanilla<small>Autor de la guía</small></figcaption>
+ </figure>
+ <div>
+  <div class="mono kick">Quién está detrás</div>
+  <h2>Soy Luis. Uso todos los días lo que te enseño.</h2>
+  <p class="lead" style="margin-top:20px">Desde hace años uso inteligencia artificial para operar mis propios negocios. Hoy manejo varios a la vez, y todos corren sobre el mismo sistema que explica esta guía: una carpeta por negocio que Claude lee antes de ayudarme.</p>
+  <ul class="biz">
+   <li><span><b>Agencia de marketing digital.</b> <span>Campañas de Meta Ads para empresas.</span></span></li>
+   <li><span><b>Aceleradora inmobiliaria.</b> <span>Comercialización de proyectos inmobiliarios.</span></span></li>
+   <li><span><b>Clínica fonoaudiológica.</b> <span>La estoy abriendo con mi esposa en Estados Unidos.</span></span></li>
+   <li><span><b>Kintila Agents.</b> <span>Agentes de IA que hacen el trabajo operativo de un negocio.</span></span></li>
+  </ul>
+  <p>Vengo del diseño industrial y del marketing, no de la programación. Escribí la guía con el orden que me hubiera gustado tener cuando empecé.</p>
+  <p style="margin:0"><a href="https://www.instagram.com/im.kintila/" target="_blank" rel="noopener">@im.kintila en Instagram</a></p>
  </div>
 </div></section>
 
